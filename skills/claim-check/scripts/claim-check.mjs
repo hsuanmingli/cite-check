@@ -109,7 +109,7 @@ async function fetchPage(url) {
       redirect: 'follow',
       signal: AbortSignal.timeout(timeoutMs),
       headers: {
-        'User-Agent': 'Mozilla/5.0 (compatible; claim-check/0.1; +https://github.com/)',
+        'User-Agent': 'Mozilla/5.0 (compatible; claim-check/0.1; +https://github.com/hsuanmingli/cite-check)',
         Accept: 'text/html,text/plain,application/xhtml+xml;q=0.9,*/*;q=0.5',
       },
     });

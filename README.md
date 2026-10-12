@@ -29,7 +29,7 @@ Supported citation formats: inline links `[text](url)`, footnotes `[^1]` + `[^1]
 ## Install
 
 ```bash
-git clone <this-repo> ~/claim-check-skill
+git clone https://github.com/hsuanmingli/cite-check ~/claim-check-skill
 mkdir -p ~/.claude/skills
 ln -s ~/claim-check-skill/skills/claim-check ~/.claude/skills/claim-check
 ```
@@ -115,7 +115,7 @@ AI agent 寫的報告常附很多連結。有些連結失效。有些頁面講�
 ### 安裝
 
 ```bash
-git clone <this-repo> ~/claim-check-skill
+git clone https://github.com/hsuanmingli/cite-check ~/claim-check-skill
 mkdir -p ~/.claude/skills
 ln -s ~/claim-check-skill/skills/claim-check ~/.claude/skills/claim-check
 ```
