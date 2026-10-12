@@ -71,7 +71,6 @@ After the table, list the `not found` and `partial` rows again in one short line
 
 ## Limits (say so if relevant)
 
-- Claims without a URL are not checked. A sentence that is only a link ("See https://...") has nothing to check and is skipped.
-- Claims without a URL are not checked. This skill checks citations, not general truth.
+- Claims without a URL are not checked. A sentence that is only a link ("See https://...") has nothing to check and is skipped. This skill checks citations, not general truth.
 - PDFs and pages that need JavaScript or a login come back `unreachable`.
 - Word matching is weakest on paraphrases and on Chinese/Japanese/Korean text; that is what Step 2 is for.
