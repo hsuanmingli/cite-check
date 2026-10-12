@@ -27,7 +27,8 @@ const asJson = argv.includes('--json');
 const timeoutMs = Number(opt('--timeout', '20')) * 1000;
 
 // ---------- 1. extract claims ----------
-const URL_RE = /https?:\/\/[^\s<>)\]"'，。、」]+/g;
+// Bare URLs may contain one level of balanced parentheses, e.g. wiki/Python_(programming_language).
+const URL_RE = /https?:\/\/(?:[^\s<>()\]"'，。、」]|\([^\s<>()]*\))+/g;
 const trimUrl = (u) => u.replace(/[.,;:!?]+$/, '');
 
 function extractClaims(text) {
@@ -220,7 +221,13 @@ function matchClaim(claim, pageText) {
 }
 
 // ---------- 4. run ----------
-const doc = readFileSync(docPath, 'utf8');
+let doc;
+try {
+  doc = readFileSync(docPath, 'utf8');
+} catch (e) {
+  console.error(`Cannot read ${docPath}: ${e.code || e.message}`);
+  process.exit(1);
+}
 const claims = extractClaims(doc);
 if (!claims.length) {
   console.error('No cited claims found (looked for markdown links, [^footnotes] and bare URLs).');

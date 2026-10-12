@@ -65,7 +65,7 @@ Input ([examples/02-fake-citation.md](examples/02-fake-citation.md)), with four 
 - A 2025 study found 73% of agents fabricate citations ([study](https://example.com/this-study-does-not-exist-2025)).
 ```
 
-Script output (full report: [examples/02-fake-citation.claim-check.md](examples/02-fake-citation.claim-check.md)):
+Script output, trimmed to the key columns (full report with overlap scores and source sentences: [examples/02-fake-citation.claim-check.md](examples/02-fake-citation.claim-check.md)):
 
 | # | Claim | Verdict | Notes |
 |---|---|---|---|
@@ -80,7 +80,7 @@ All four errors are caught. The accurate sample ([examples/01-accurate.md](examp
 
 - It checks "does this page say it", not "is it true".
 - PDFs and JavaScript-rendered pages come back `unreachable`.
-- Word matching is weak on paraphrases and on Chinese/Japanese/Korean text. In [examples/03-zh-footnotes.md](examples/03-zh-footnotes.md) the script marks a correct Chinese paraphrase as `not found`; the Claude review step is there to fix exactly this.
+- Word matching is weak on paraphrases and on Chinese/Japanese/Korean text. In [examples/03-zh-footnotes.md](examples/03-zh-footnotes.md) the script marks one correct Chinese claim `partial` and another `not found`; the Claude review step is there to fix exactly this.
 
 ## License
 
@@ -148,4 +148,4 @@ node ~/claim-check-skill/skills/claim-check/scripts/claim-check.mjs report.md --
 
 - 它只查「頁面有沒有寫」，不查「事情是不是真的」。
 - PDF 和 JavaScript 渲染的頁面會回 `unreachable`。
-- 詞彙比對對改寫句和中日韓文字較弱。[examples/03-zh-footnotes.md](examples/03-zh-footnotes.md) 裡，一條正確的中文改寫被 script 判成 `not found`。Claude 複查這一步就是為了修這種情況。
+- 詞彙比對對改寫句和中日韓文字較弱。[examples/03-zh-footnotes.md](examples/03-zh-footnotes.md) 裡，兩條正確的中文主張被 script 判成 `partial` 和 `not found`。Claude 複查這一步就是為了修這種情況。

@@ -43,6 +43,7 @@ For each result in the JSON:
 Rules for your review:
 
 - **Upgrade to `found` only if you can quote a sentence from the page that states the same fact.** Put that sentence in the "source sentence" column. Paraphrase is fine; a different fact is not.
+- A `partial` with no notes means the words only partly overlap. Read the snippet: if it states the same fact, upgrade to `found`; if it covers only part of the claim, keep `partial` and say which part is missing.
 - **A number note means something.** If `notes` says a number was not found near the matching text, check the page for that number. A wrong number is `partial` at best, and say which number is wrong.
 - A missing quote (`quoted text not on page`) stays `not found` unless the exact wording is on the page. Close-but-different wording is `partial` — the quote is misquoted.
 - The page saying something *related* (same topic, different claim) is `not found`.
@@ -51,7 +52,7 @@ Rules for your review:
 
 ## Step 3 — report
 
-Write the report next to the document as `<document-name>.claim-check.md`, and print the same table in the chat:
+Write the report next to the document as `<document-name>.claim-check.md` (overwrite the script's version if you ran it with `--out`), and print the same table in the chat. Drop the script's Overlap column; it is a debugging aid, not a verdict.
 
 ```markdown
 # Claim check: <document>
@@ -70,6 +71,7 @@ After the table, list the `not found` and `partial` rows again in one short line
 
 ## Limits (say so if relevant)
 
+- Claims without a URL are not checked. A sentence that is only a link ("See https://...") has nothing to check and is skipped.
 - Claims without a URL are not checked. This skill checks citations, not general truth.
 - PDFs and pages that need JavaScript or a login come back `unreachable`.
 - Word matching is weakest on paraphrases and on Chinese/Japanese/Korean text; that is what Step 2 is for.
