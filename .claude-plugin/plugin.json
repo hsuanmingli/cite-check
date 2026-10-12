@@ -1,0 +1,10 @@
+{
+  "name": "cite-check",
+  "version": "0.1.0",
+  "description": "Check that the URLs cited in a document actually support its claims. Reports found / partial / not found / unreachable with the matching source sentence.",
+  "author": { "name": "Ralph Li" },
+  "homepage": "https://github.com/hsuanmingli/cite-check",
+  "repository": "https://github.com/hsuanmingli/cite-check",
+  "license": "MIT",
+  "keywords": ["citations", "fact-check", "sources", "verification", "research"]
+}

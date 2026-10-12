@@ -28,6 +28,15 @@ Supported citation formats: inline links `[text](url)`, footnotes `[^1]` + `[^1]
 
 ## Install
 
+As a plugin, in Claude Code:
+
+```
+/plugin marketplace add hsuanmingli/cite-check
+/plugin install cite-check@cite-check
+```
+
+Or as a plain skill:
+
 ```bash
 git clone https://github.com/hsuanmingli/cite-check ~/claim-check-skill
 mkdir -p ~/.claude/skills
@@ -113,6 +122,15 @@ AI agent 寫的報告常附很多連結。有些連結失效。有些頁面講�
 支援的引用格式：行內連結 `[文字](網址)`、註腳 `[^1]` 加 `[^1]: 網址`、裸網址。沒附網址的主張不檢查。
 
 ### 安裝
+
+用 plugin 安裝，在 Claude Code 裡輸入：
+
+```
+/plugin marketplace add hsuanmingli/cite-check
+/plugin install cite-check@cite-check
+```
+
+或當成一般 skill 安裝：
 
 ```bash
 git clone https://github.com/hsuanmingli/cite-check ~/claim-check-skill

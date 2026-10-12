@@ -1,0 +1,16 @@
+{
+  "name": "cite-check",
+  "owner": {
+    "name": "Ralph Li"
+  },
+  "metadata": {
+    "description": "Citation checking for Claude Code: verify that cited pages say what the document claims."
+  },
+  "plugins": [
+    {
+      "name": "cite-check",
+      "source": "./",
+      "description": "Check that the URLs cited in a document actually support its claims."
+    }
+  ]
+}
